@@ -1,4 +1,3 @@
-````markdown
 # Full-Stack Vue.js and Slim Framework Application
 
 This project is a full-stack web application built with Vue.js in the frontend and Slim Framework in the backend. It's designed to provide a seamless development experience for building scalable and maintainable web applications.
@@ -102,7 +101,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 - Vue.js for the progressive JavaScript framework used in the frontend.
 - All other libraries and frameworks that made this project possible.
 
-```
 
 Remember to replace placeholder texts like "Frontend testing instructions (add your specific commands here)" with actual information relevant to your project. This template provides a starting point, but you should tailor it to fit the specifics of your project, including adding or removing sections as appropriate.
-```
