@@ -1,108 +1,101 @@
-````markdown
-# Full-Stack Vue.js and Slim Framework Application
+# CRUD Application with Slim Framework and Vue.js
 
-This project is a full-stack web application built with Vue.js in the frontend and Slim Framework in the backend. It's designed to provide a seamless development experience for building scalable and maintainable web applications.
+This project is a lab test submission for the course Web Technology. It implements a simple CRUD application with a backend using Slim Framework and a frontend using Vue.js. Below are the details and instructions for the project.
 
-## Getting Started
+## Table of Contents
+1. [Project Requirements](#project-requirements)
+2. [Bonus Features](#bonus-features)
+3. [Installation](#installation)
+   - [Backend Installation and Setup](#backend-installation-and-setup)
+   - [Frontend Installation and Setup](#frontend-installation-and-setup)
+4. [Project Structure](#project-structure)
+5. [Components and Routing](#components-and-routing)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+## Project Requirements:
+- Backend app with Slim Framework. (5% marks)
+- Backend app that serves 5 basic API endpoints: view all users, view a user, save a user, update a user, and delete a user. (25% marks)
+- Frontend app with Vue JS. (5% marks)
+- Frontend app that provides UIs similar to those shown in the videocast. (20% marks)
+- Frontend app that integrates with the backend to fetch and manipulate users' data in the database. (10% marks)
+- Apply Vuex state management in the Vue app to store users' data. (10% marks)
+- Implement Vuex actions for all CRUD operations on users' data. (10% marks)
+- Apply validation in the backend for empty and invalid inputs. (5% marks)
+- Apply validation in the frontend for empty and invalid inputs. (5% marks)
+- Share the SQL file in the submission folder as well. (5% marks)
 
-### Prerequisites
+## Bonus Features:
+- Apply Bootstrap version 5 in the Frontend Vue app. (+10% marks)
+- Share source codes of the frontend and backend via GitHub/GitLab. (+10% marks)
+- Create a README file to understand how to install and execute frontend and backend codebase. (+15% marks)
 
-- PHP 7.4 or newer
-- Composer
-- Node.js and npm
+## Installation
 
-### Installing
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/GaafarDev/LabTest3-AbdalaGaafar.git
+    ```
 
-#### Backend Setup
+2. Navigate into the project directory:
+    ```bash
+    cd LabTest3-AbdalaGaafar
+    ```
 
-1. Navigate to the backend directory:
+### Backend Installation and Setup
 
-```bash
-cd backend
-```
-````
+1. Navigate to the backend folder:
+    ```bash
+    cd backend
+    ```
 
-2. Install PHP dependencies:
+2. Install dependencies:
+    ```bash
+    composer install
+    ```
 
-```bash
-composer install
-```
+3. Set up your database configuration in `backend/src/settings.php`.
 
-3. Start the Slim Framework application:
+4. Import the SQL file `crud_app_database.sql` into your MySQL database.
 
-```bash
-composer start
-```
+5. Start the backend server:
+    ```bash
+    php -S localhost:8080 -t public
+    ```
 
-Or, use `docker-compose` to run the app with Docker:
+### Frontend Installation and Setup
 
-```bash
-docker-compose up -d
-```
+1. Navigate to the frontend folder:
+    ```bash
+    cd frontend
+    ```
 
-After that, open `http://localhost:8080` in your browser.
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-#### Frontend Setup
+3. Start the frontend development server:
+    ```bash
+    npm run serve
+    ```
 
-1. Navigate to the frontend directory:
+4. Open your browser and go to `http://localhost:8081`.
 
-```bash
-cd frontend
-```
+## Project Structure
 
-2. Install JavaScript dependencies:
+- `backend/`: Backend folder.
+  - `public/`: Publicly accessible files.
+  - `src/`: Backend source files including Slim routes and controllers.
+  - `database.sql`: SQL file for database setup.
 
-```bash
-npm install
-```
+- `frontend/`: Frontend folder.
+  - `src/`: Vue.js source files.
+    - `components/`: Vue components.
+    - `store.js`: Vuex store configuration.
+    - `router.js`: Vue Router configuration.
+    - `views/`: Vue components for different views.
+  - `public/`: Public assets.
+  - `README.md`: Instructions and details about the frontend setup.
 
-3. Serve the application with hot reloads for development:
+## Components and Routing
 
-```bash
-npm run serve
-```
-
-4. For production build:
-
-```bash
-npm run build
-```
-
-## Running the Tests
-
-### Backend Tests
-
-Run the following command in the backend directory to execute the tests:
-
-```bash
-composer test
-```
-
-### Frontend Tests
-
-Frontend testing instructions (add your specific commands here).
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system.
-
-## Contributing
-
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
-
-## Acknowledgments
-
-- Slim Framework for the powerful yet lightweight PHP framework.
-- Vue.js for the progressive JavaScript framework used in the frontend.
-- All other libraries and frameworks that made this project possible.
-
-```
-
-Remember to replace placeholder texts like "Frontend testing instructions (add your specific commands here)" with actual information relevant to your project. This template provides a starting point, but you should tailor it to fit the specifics of your project, including adding or removing sections as appropriate.
-```
+- Frontend components and routing configured as per lab test requirements.
