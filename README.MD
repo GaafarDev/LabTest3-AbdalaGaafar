@@ -54,7 +54,7 @@ This project is a lab test submission for the course Web Technology. It implemen
 
 3. Set up your database configuration in `backend/src/settings.php`.
 
-4. Import the SQL file `database.sql` into your MySQL database.
+4. Import the SQL file `crud_app_database.sql` into your MySQL database.
 
 5. Start the backend server:
     ```bash
