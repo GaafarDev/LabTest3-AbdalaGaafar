@@ -16,7 +16,7 @@ return function (ContainerBuilder $containerBuilder) {
                 'db' => [
                     'driver' => 'mysql',
                     'host' => 'localhost',
-                    'database' => 'crud_app',  // Correct database name
+                    'database' => 'crud_app',
                     'username' => 'root',
                     'password' => '1234',
                     'charset'   => 'utf8',

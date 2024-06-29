@@ -1,5 +1,10 @@
+-- Create database
 CREATE DATABASE IF NOT EXISTS crud_app;
+
+-- Use the created database
 USE crud_app;
+
+-- Create users table
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -9,7 +14,8 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+-- Insert initial data
 INSERT INTO users (name, email, phone) VALUES
-('John Doe', 'john@example.com', '1234567890'),
-('Jane Smith', 'jane@example.com', '0987654321'),
-('Alice Johnson', 'alice@example.com', '1122334455');
+('Gaafar', 'Gaafar@example.com', '1234567890'),
+('Abdalla', 'Abdalla@example.com', '0987654321'),
+('Ahmed', 'Ahmed@example.com', '1122334455');
