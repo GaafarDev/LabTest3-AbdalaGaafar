@@ -25,12 +25,12 @@ This project is a lab test submission for the course Web Technology. It implemen
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/your-repo.git
+    git clone https://github.com/GaafarDev/LabTest3-AbdalaGaafar.git
     ```
 
 2. Navigate into the project directory:
     ```bash
-    cd your-repo
+    cd LabTest3-AbdalaGaafar
     ```
 
 ### Backend Installation and Setup
@@ -92,9 +92,3 @@ This project is a lab test submission for the course Web Technology. It implemen
 ## Components and Routing
 
 - Frontend components and routing configured as per lab test requirements.
-
----
-
-Please ensure to replace placeholders (`yourusername`, `your-repo`) with actual values relevant to your project. This README file covers installation, setup, project structure, and basic usage instructions for both frontend and backend components of your CRUD application.
-
----
