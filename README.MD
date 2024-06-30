@@ -9,7 +9,6 @@ This project is a lab test submission for the course Web Technology. It implemen
    - [Backend Installation and Setup](#backend-installation-and-setup)
    - [Frontend Installation and Setup](#frontend-installation-and-setup)
 4. [Project Structure](#project-structure)
-5. [Components and Routing](#components-and-routing)
 
 ## Project Requirements:
 - Backend app with Slim Framework. (5% marks)
@@ -95,7 +94,3 @@ This project is a lab test submission for the course Web Technology. It implemen
     - `views/`: Vue components for different views.
   - `public/`: Public assets.
   - `README.md`: Instructions and details about the frontend setup.
-
-## Components and Routing
-
-- Frontend components and routing configured as per lab test requirements.
