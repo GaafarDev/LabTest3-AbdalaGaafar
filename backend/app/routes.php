@@ -19,17 +19,29 @@ return function (App $app) {
             return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
         }
     });
-
-    $app->get('/api/users/{id}', function (Request $request, Response $response, $args) {
+    $app->put('/api/users/{id}', function (Request $request, Response $response, $args) {
         try {
+            $data = $request->getParsedBody();
+            error_log(print_r($data, true));  
+            $errors = UserValidator::validate($data);
+    
+            if (!empty($errors)) {
+                error_log(print_r($errors, true));  
+                $response->getBody()->write(json_encode(['errors' => $errors]));
+                return $response->withHeader('Content-Type', 'application/json')->withStatus(400);
+            }
+    
             $user = User::find($args['id']);
             if (!$user) {
                 $response->getBody()->write(json_encode(['error' => 'User not found']));
                 return $response->withHeader('Content-Type', 'application/json')->withStatus(404);
             }
+    
+            $user->update($data);
             $response->getBody()->write(json_encode($user));
             return $response->withHeader('Content-Type', 'application/json');
         } catch (\Exception $e) {
+            error_log($e->getMessage()); 
             $response->getBody()->write(json_encode(['error' => $e->getMessage()]));
             return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
         }
@@ -54,30 +66,7 @@ return function (App $app) {
         }
     });
 
-    $app->put('/api/users/{id}', function (Request $request, Response $response, $args) {
-        try {
-            $data = $request->getParsedBody();
-            $errors = UserValidator::validate($data);
 
-            if (!empty($errors)) {
-                $response->getBody()->write(json_encode(['errors' => $errors]));
-                return $response->withHeader('Content-Type', 'application/json')->withStatus(400);
-            }
-
-            $user = User::find($args['id']);
-            if (!$user) {
-                $response->getBody()->write(json_encode(['error' => 'User not found']));
-                return $response->withHeader('Content-Type', 'application/json')->withStatus(404);
-            }
-
-            $user->update($data);
-            $response->getBody()->write(json_encode($user));
-            return $response->withHeader('Content-Type', 'application/json');
-        } catch (\Exception $e) {
-            $response->getBody()->write(json_encode(['error' => $e->getMessage()]));
-            return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
-        }
-    });
 
     $app->delete('/api/users/{id}', function (Request $request, Response $response, $args) {
         try {

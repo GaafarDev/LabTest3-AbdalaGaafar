@@ -35,6 +35,7 @@ export default createStore({
       commit('SET_LOADING', true);
       try {
         const response = await axios.get('/users');
+        console.log('Fetched users:', response.data);
         commit('SET_USERS', response.data);
         commit('SET_ERROR', null);
       } catch (error) {
@@ -61,12 +62,18 @@ export default createStore({
     async updateUser({ commit }, { id, userData }) {
       commit('SET_LOADING', true);
       try {
+        console.log('Updating user in store:', { id, userData }); 
+        if (!id) {
+          throw new Error('User ID is undefined');
+        }
         const response = await axios.put(`/users/${id}`, userData);
         commit('UPDATE_USER', response.data);
         commit('SET_ERROR', null);
         return response.data;
       } catch (error) {
         commit('SET_ERROR', 'Failed to update user');
+        console.error('Error updating user:', error);
+        console.error('Error details:', error.response?.data);
         throw error;
       } finally {
         commit('SET_LOADING', false);

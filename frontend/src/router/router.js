@@ -1,33 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import UserList from '@/components/UserList.vue';
-import UserForm from '@/components/UserForm.vue';
-import UserDetails from '@/components/UserDetails.vue';
+import UserManagement from '@/components/UserManagement.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: UserList
+    component: UserManagement
   },
   {
     path: '/users',
-    name: 'UserList',
-    component: UserList
-  },
-  {
-    path: '/user/new',
-    name: 'CreateUser',
-    component: UserForm
-  },
-  {
-    path: '/user/:id',
-    name: 'UserDetails',
-    component: UserDetails
-  },
-  {
-    path: '/user/:id/edit',
-    name: 'EditUser',
-    component: UserForm
+    name: 'UserManagement',
+    component: UserManagement
   }
 ];
 
